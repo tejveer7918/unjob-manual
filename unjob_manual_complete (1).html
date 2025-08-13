@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unjob.ai Manual</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .toc {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .toc h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .toc > ul > li {
+            margin-bottom: 15px;
+        }
+        
+        .toc ul ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+        
+        .toc ul ul li {
+            margin-bottom: 8px;
+        }
+        
+        .toc ul ul ul {
+            margin-left: 15px;
+        }
+        
+        .toc ul ul ul li {
+            margin-bottom: 5px;
+        }
+        
+        .toc a {
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: 500;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .toc a:hover {
+            background-color: #3498db;
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .section-number {
+            color: #7f8c8d;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #fdfdfd;
+            border-radius: 8px;
+            border: 1px solid #e1e8ed;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .section h3 {
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .section h4 {
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        
+        .section ul, .section ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        .section li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background: #e8f4fd;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #3498db;
+            color: white;
+            padding: 12px 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .toc {
+                padding: 20px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+
+        .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #3498db;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    transition: all 0.4s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    z-index: 999;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #2980b9;
+    transform: translateY(-3px) scale(1.1);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Unjob.ai Manual</h1>
+        
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#section-1"><span class="section-number">1.</span>Introduction</a>
+                    <ul>
+                        <li><a href="#section-1-1"><span class="section-number">1.1</span>About Unjob.ai</a></li>
+                        <li><a href="#section-1-2"><span class="section-number">1.2</span>Purpose of the Manual</a></li>
+                        <li><a href="#section-1-3"><span class="section-number">1.3</span>Who Should Use This Manual</a></li>
+                        <li><a href="#section-1-4"><span class="section-number">1.4</span>Key Features Overview</a></li>
+                        <li><a href="#section-1-5"><span class="section-number">1.5</span>System Requirements & Supported Devices</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-2"><span class="section-number">2.</span>General Platform Mechanics & Essential Information</a>
+                    <ul>
+                        <li><a href="#section-2-1"><span class="section-number">2.1</span>How Unjob.ai Works – Full Workflow Overview</a></li>
+                        <li><a href="#section-2-2"><span class="section-number">2.2</span>Unjob.ai vs. Other Platforms (Upwork, Fiverr, etc.)</a></li>
+                        <li><a href="#section-2-3"><span class="section-number">2.3</span>Cost for Creators</a></li>
+                        <li><a href="#section-2-4"><span class="section-number">2.4</span>Accepted Content Types</a></li>
+                        <li><a href="#section-2-5"><span class="section-number">2.5</span>Direct Communication Policy (Do's & Don'ts)</a></li>
+                        <li><a href="#section-2-6"><span class="section-number">2.6</span>Home Page Functionality Overview</a></li>
+                        <li><a href="#section-2-7"><span class="section-number">2.7</span>Contacting Support & Dispute Resolution Team</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-3"><span class="section-number">3.</span>Getting Started</a>
+                    <ul>
+                        <li><a href="#section-3-1"><span class="section-number">3.1</span>Account Registration – Freelancers</a></li>
+                        <li><a href="#section-3-2"><span class="section-number">3.2</span>Account Registration – Companies</a></li>
+                        <li><a href="#section-3-3"><span class="section-number">3.3</span>Logging In & Out</a></li>
+                        <li><a href="#section-3-4"><span class="section-number">3.4</span>Navigating the Dashboard</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-4"><span class="section-number">4.</span>For Freelancers (Creators)</a>
+                    <ul>
+                        <li><a href="#section-4-1"><span class="section-number">4.1</span>Creator Onboarding Process</a></li>
+                        <li><a href="#section-4-2"><span class="section-number">4.2</span>Home Section Overview</a></li>
+                        <li><a href="#section-4-3"><span class="section-number">4.3</span>Gigs Section</a>
+                            <ul>
+                                <li><a href="#section-4-3-1"><span class="section-number">4.3.1</span>Browsing Gigs</a></li>
+                                <li><a href="#section-4-3-2"><span class="section-number">4.3.2</span>Applying to Gigs</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#section-4-4"><span class="section-number">4.4</span>Notifications Panel</a></li>
+                        <li><a href="#section-4-5"><span class="section-number">4.5</span>Messages</a></li>
+                        <li><a href="#section-4-6"><span class="section-number">4.6</span>Creating a Post</a></li>
+                        <li><a href="#section-4-7"><span class="section-number">4.7</span>Profile Setup & Editing</a>
+                            <ul>
+                                <li><a href="#section-4-7-1"><span class="section-number">4.7.1</span>Profile Photo & Cover Photo</a></li>
+                                <li><a href="#section-4-7-2"><span class="section-number">4.7.2</span>Adding Skills</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#section-4-8"><span class="section-number">4.8</span>Portfolio Management</a>
+                            <ul>
+                                <li><a href="#section-4-8-1"><span class="section-number">4.8.1</span>Adding Projects</a></li>
+                                <li><a href="#section-4-8-2"><span class="section-number">4.8.2</span>Linking Posts to Portfolio</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#section-4-9"><span class="section-number">4.9</span>Content Visibility & AI Recommendations (How It Works & Best Practices)</a></li>
+                        <li><a href="#section-4-10"><span class="section-number">4.10</span>Content Tagging & Categorization for Maximum Reach</a></li>
+                        <li><a href="#section-4-11"><span class="section-number">4.11</span>Post vs. Portfolio – Differences & Best Use Cases</a></li>
+                        <li><a href="#section-4-12"><span class="section-number">4.12</span>Tips for Building a Strong Portfolio (Recommended Number of Projects & Media Types)</a></li>
+                        <li><a href="#section-4-13"><span class="section-number">4.13</span>Getting Work on Unjob.ai</a>
+                            <ul>
+                                <li><a href="#section-4-13-1"><span class="section-number">4.13.1</span>How Brands Approach Creators</a></li>
+                                <li><a href="#section-4-13-2"><span class="section-number">4.13.2</span>How Creators Approach Brands</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#section-4-14"><span class="section-number">4.14</span>Managing Projects & Deliverables</a>
+                            <ul>
+                                <li><a href="#section-4-14-1"><span class="section-number">4.14.1</span>Accepting Offers</a></li>
+                                <li><a href="#section-4-14-2"><span class="section-number">4.14.2</span>Submitting Work</a></li>
+                                <li><a href="#section-4-14-3"><span class="section-number">4.14.3</span>Handling Revision Requests</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#section-4-15"><span class="section-number">4.15</span>Settings Menu</a>
+                            <ul>
+                                <li><a href="#section-4-15-1"><span class="section-number">4.15.1</span>Projects Tab (Applications Status)</a></li>
+                                <li><a href="#section-4-15-2"><span class="section-number">4.15.2</span>Payments Tab (Earnings & Withdrawals)</a></li>
+                                <li><a href="#section-4-15-3"><span class="section-number">4.15.3</span>Subscription Plans</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#section-4-16"><span class="section-number">4.16</span>Logging Out</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-5"><span class="section-number">5.</span>For Hiring Companies (Brands)</a>
+                    <ul>
+                        <li><a href="#section-5-1"><span class="section-number">5.1</span>Brand Onboarding Process</a></li>
+                        <li><a href="#section-5-2"><span class="section-number">5.2</span>Home Section Overview</a></li>
+                        <li><a href="#section-5-3"><span class="section-number">5.3</span>Searching for Creators & Gigs</a></li>
+                        <li><a href="#section-5-4"><span class="section-number">5.4</span>Creating a Gig</a>
+                            <ul>
+                                <li><a href="#section-5-4-1"><span class="section-number">5.4.1</span>Gig Title, Category & Tags</a></li>
+                                <li><a href="#section-5-4-2"><span class="section-number">5.4.2</span>Project Overview & Assets</a></li>
+                                <li><a href="#section-5-4-3"><span class="section-number">5.4.3</span>Budget & Timeline</a></li>
+                                <li><a href="#section-5-4-4"><span class="section-number">5.4.4</span>Gig Preview & Posting</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#section-5-5"><span class="section-number">5.5</span>Reviewing Applications</a>
+                            <ul>
+                                <li><a href="#section-5-5-1"><span class="section-number">5.5.1</span>Accepting/Rejecting Applicants (Green/Red Icons)</a></li>
+                                <li><a href="#section-5-5-2"><span class="section-number">5.5.2</span>Viewing Creator Profiles & Portfolios</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#section-5-6"><span class="section-number">5.6</span>Managing Hires & Payments</a></li>
+                        <li><a href="#section-5-7"><span class="section-number">5.7</span>Communication Best Practices with Freelancers</a></li>
+                        <li><a href="#section-5-8"><span class="section-number">5.8</span>Requesting Revisions from Creators</a></li>
+                        <li><a href="#section-5-9"><span class="section-number">5.9</span>Company Settings</a></li>
+                        <li><a href="#section-5-10"><span class="section-number">5.10</span>Logging Out</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-6"><span class="section-number">6.</span>Payment Process</a>
+                    <ul>
+                        <li><a href="#section-6-1"><span class="section-number">6.1</span>How Payments Work for Freelancers (Wallet System)</a></li>
+                        <li><a href="#section-6-2"><span class="section-number">6.2</span>How Payments Work for Companies (Wallet System)</a></li>
+                        <li><a href="#section-6-3"><span class="section-number">6.3</span>Dispute Resolution & Support</a></li>
+                        <li><a href="#section-6-4"><span class="section-number">6.4</span>Refund Policy for Brands</a></li>
+                        <li><a href="#section-6-5"><span class="section-number">6.5</span>No Refunds for Freelancers</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-7"><span class="section-number">7.</span>Frequently Asked Questions (FAQ)</a></li>
+                <li><a href="#section-8"><span class="section-number">8.</span>Troubleshooting & Common Errors</a>
+                    <ul>
+                        <li><a href="#section-8-1"><span class="section-number">8.1</span>Login Issues</a></li>
+                        <li><a href="#section-8-2"><span class="section-number">8.2</span>Gig Creation Errors</a></li>
+                        <li><a href="#section-8-3"><span class="section-number">8.3</span>Payment Issues</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="section-1" class="section">
+            <h2>1. Introduction</h2>
+            
+            <div id="section-1-1">
+                <h3>1.1 About Unjob.ai</h3>
+                <p>Unjob.ai is an AI-powered, content-first freelance platform that connects creative freelancers (creators) with companies and brands seeking high-quality creative work.</p>
+                
+                <p>Unlike traditional job boards, Unjob.ai removes the need for résumés or lengthy proposals. Instead, it uses Smart AI Matching to pair freelancers with projects based on their skills, style, and tools showcased in their portfolio.</p>
+                
+                <div class="highlight-box">
+                    <h4>Key characteristics of Unjob.ai include:</h4>
+                    <ul>
+                        <li><strong>No résumés or cover letters</strong> – creators simply upload their work (e.g., reels, designs, animations, case studies, user-generated content).</li>
+                        <li><strong>AI-based matching</strong> – connects companies with creators based on creative style and past work, not just keywords.</li>
+                        <li><strong>Two-way hiring</strong> – companies can pitch projects directly to creators whose work they admire.</li>
+                        <li><strong>Secure payment process</strong> – brands fund the project upfront, and freelancers are paid after work is submitted and approved, avoiding delays or confusion.</li>
+                        <li><strong>Portfolio-first approach</strong> – creators can build an easily viewable portfolio for companies to browse.</li>
+                    </ul>
+                </div>
+                
+                <p>In essence, Unjob.ai is designed to simplify and modernize the way creative professionals and companies find, collaborate, and complete projects.</p>
+            </div>
+
+            <div id="section-1-2">
+                <h3>1.2 Purpose of the Manual</h3>
+                <p>This manual is a comprehensive step-by-step guide for using Unjob.ai, covering all major features, tools, and functions available to both freelancers and hiring companies.</p>
+                
+                <div class="highlight-box">
+                    <h4>The purpose of this manual is to:</h4>
+                    <ul>
+                        <li>Guide users through each section of the platform — from account creation to posting gigs or projects.</li>
+                        <li>Explain the functionality of every button, option, and menu item on the website.</li>
+                        <li>Provide clear instructions for completing common tasks, such as uploading a portfolio item, creating a gig, applying to a gig, reviewing applications, and managing payments.</li>
+                        <li>Offer troubleshooting tips for common issues users may encounter.</li>
+                        <li>Help maximize platform efficiency — ensuring freelancers showcase their work effectively and companies find the best talent quickly.</li>
+                    </ul>
+                </div>
+                
+                <p>This manual includes visual references (screenshots, icons, labels) for better clarity, ensuring that even new users can quickly adapt to the platform without prior experience.</p>
+            </div>
+
+            <div id="section-1-3">
+                <h3>1.3 Who Should Use This Manual</h3>
+                <p>This manual is intended for two main audiences:</p>
+                
+                <h4>Freelancers / Creators</h4>
+                <ul>
+                    <li>Individuals offering creative services such as video production, social media content creation, graphic design, animation, and related work.</li>
+                    <li>Freelancers seeking a portfolio-based, AI-matched way to find projects without the traditional job application process.</li>
+                    <li>Creators who want to receive direct pitches from companies based on their creative style.</li>
+                </ul>
+                
+                <h4>Companies / Hiring Managers / Brands</h4>
+                <ul>
+                    <li>Organizations, marketing teams, startups, and brands seeking skilled freelancers for creative projects.</li>
+                    <li>Companies looking to post gigs, browse portfolios, and quickly identify suitable candidates.</li>
+                    <li>Employers who value an efficient, transparent payment process and direct collaboration with creators.</li>
+                </ul>
+            </div>
+
+            <div id="section-1-4">
+                <h3>1.4 Key Features Overview</h3>
+                <p>Unjob.ai offers a set of core features that cater to both freelancers (creators) and hiring companies (brands) to ensure smooth collaboration, efficient matching, and secure project completion.</p>
+                
+                <h4>For Freelancers</h4>
+                <ul>
+                    <li><strong>Smart AI Matching</strong> – Matches your uploaded content with relevant company projects based on your tools, tone, and creative style — not just keywords.</li>
+                    <li><strong>Portfolio-First Approach</strong> – Build a portfolio showcasing your best work. Projects must first be uploaded as posts before they can be added to your portfolio.</li>
+                    <li><strong>Direct Pitches from Companies</strong> – Companies can shortlist and pitch projects directly to you if they like your work.</li>
+                    <li><strong>Content Variety Support</strong> – Upload short videos, UGC (User Generated Content), designs, animations, case studies, behind-the-scenes clips, and more.</li>
+                    <li><strong>Project & Payment Management</strong> – Track applications, accepted and pending projects, and payment status through your dashboard. Withdraw earnings directly from your wallet to your personal account.</li>
+                    <li><strong>Subscription Plans</strong> – Choose from different plans (Basic Monthly, Basic Annual, or Lifetime) to unlock platform features.</li>
+                </ul>
+                
+                <h4>For Hiring Companies</h4>
+                <ul>
+                    <li><strong>Gig Creation</strong> – Post a gig by setting a title, selecting a category/subcategory, adding tags, describing the project, uploading assets, and specifying budget and timeline.</li>
+                    <li><strong>Applicant Review Tools</strong> – View all applications in one place, mark candidates with a green circle (accept) or red circle (reject), and browse their full profile and portfolio before making decisions.</li>
+                    <li><strong>Secure Payment Handling</strong> – Fund projects upfront and pay creators only after work is submitted and approved, ensuring trust and accountability.</li>
+                    <li><strong>Direct Communication</strong> – Message creators to clarify requirements or provide feedback within the platform.</li>
+                    <li><strong>Efficient Hiring Flow</strong> – From gig posting to payment release, the platform centralizes all steps in one secure environment.</li>
+                </ul>
+            </div>
+
+            <div id="section-1-5">
+                <h3>1.5 System Requirements & Supported Devices</h3>
+                <p>Unjob.ai is a web-based platform, meaning it can be accessed directly through an internet browser without installing separate desktop software.</p>
+                
+                <div class="highlight-box">
+                    <h4>Minimum Requirements</h4>
+                    <ul>
+                        <li><strong>Device:</strong> Desktop, laptop, tablet, or smartphone.</li>
+                        <li><strong>Operating System:</strong>
+                            <ul>
+                                <li>Windows 10 or newer</li>
+                                <li>macOS 10.14 (Mojave) or newer</li>
+                                <li>iOS 13 or newer</li>
+                                <li>Android 9.0 (Pie) or newer</li>
+                            </ul>
+                        </li>
+                        <li><strong>Web Browser:</strong>
+                            <ul>
+                                <li>Google Chrome (latest version)</li>
+                                <li>Mozilla Firefox (latest version)</li>
+                                <li>Safari (latest version)</li>
+                                <li>Microsoft Edge (latest version)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Internet:</strong> Stable broadband with at least 5 Mbps download speed.</li>
+                        <li><strong>Screen Resolution:</strong> Minimum 1280 × 720 pixels (HD).</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-box">
+                    <h4>Recommended Requirements</h4>
+                    <ul>
+                        <li><strong>Device:</strong> Laptop or desktop for gig creation and portfolio management (mobile supported but editing may be limited).</li>
+                        <li><strong>Internet:</strong> High-speed broadband with at least 10 Mbps download and 5 Mbps upload for faster media uploads.</li>
+                        <li><strong>Browser Settings:</strong> Enable cookies and JavaScript for optimal site functionality.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-2" class="section">
+            <h2>2. General Platform Mechanics & Essential Information</h2>
+            
+            <div id="section-2-1">
+                <h3>2.1 How Unjob.ai Works – Full Workflow Overview</h3>
+                <p>Unjob.ai follows a streamlined workflow that emphasizes visual portfolios and AI-driven matching over traditional application processes.</p>
+                
+                <div class="highlight-box">
+                    <h4>For Freelancers (Creators):</h4>
+                    <ol>
+                        <li><strong>Register & Profile Setup</strong> – Create an account, add skills, upload profile photos, and write a bio.</li>
+                        <li><strong>Create Posts</strong> – Upload your creative work (videos, designs, case studies) as posts on your profile.</li>
+                        <li><strong>Build Portfolio</strong> – Select your best posts to feature in your portfolio for maximum visibility.</li>
+                        <li><strong>Browse & Apply to Gigs</strong> – Search for relevant projects and submit applications with portfolio samples.</li>
+                        <li><strong>Receive Direct Pitches</strong> – Companies may approach you directly based on your portfolio.</li>
+                        <li><strong>Project Execution</strong> – Complete work, communicate with clients, and submit deliverables.</li>
+                        <li><strong>Get Paid</strong> – Receive payment in your Unjob.ai wallet after project approval, then withdraw to your bank account.</li>
+                    </ol>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>For Companies (Brands):</h4>
+                    <ol>
+                        <li><strong>Register & Company Setup</strong> – Create a company account with business details and verification.</li>
+                        <li><strong>Fund Wallet</strong> – Add money to your Unjob.ai wallet for project payments.</li>
+                        <li><strong>Create Gigs</strong> – Post project requirements, budget, timeline, and assets.</li>
+                        <li><strong>Browse Creators</strong> – Search portfolios and directly message suitable freelancers.</li>
+                        <li><strong>Review Applications</strong> – Use green/red icons to accept or reject applicants.</li>
+                        <li><strong>Hire & Collaborate</strong> – Hire creators, communicate project details, and track progress.</li>
+                        <li><strong>Approve & Pay</strong> – Review deliverables and release payment upon satisfaction.</li>
+                    </ol>
+                </div>
+                
+                <p><strong>Key Differentiator:</strong> The AI matching system analyzes your content style, tools used, and project history to suggest the most relevant opportunities or candidates.</p>
+            </div>
+
+            <div id="section-2-2">
+                <h3>2.2 Unjob.ai vs. Other Platforms (Upwork, Fiverr, etc.)</h3>
+                <p>Understanding how Unjob.ai differs from traditional freelance platforms helps users maximize their experience.</p>
+                
+                <div class="highlight-box">
+                    <h4>Traditional Platforms (Upwork, Fiverr, 99designs):</h4>
+                    <ul>
+                        <li><strong>Proposal-Heavy:</strong> Require detailed cover letters and bidding processes.</li>
+                        <li><strong>Keyword Matching:</strong> Matching based primarily on search terms and ratings.</li>
+                        <li><strong>Complex Fee Structures:</strong> Multiple fee tiers, service charges, and payment delays.</li>
+                        <li><strong>Limited Visual Focus:</strong> Text-heavy profiles with minimal emphasis on creative portfolios.</li>
+                    </ul>
+                </div>
+                
+                <div class="success-box">
+                    <h4>Unjob.ai Advantages:</h4>
+                    <ul>
+                        <li><strong>Portfolio-First:</strong> Visual content takes priority over written proposals.</li>
+                        <li><strong>AI-Powered Matching:</strong> Smart recommendations based on creative style and compatibility.</li>
+                        <li><strong>Direct Pitching:</strong> Companies can approach creators directly, reducing competition.</li>
+                        <li><strong>Transparent Pricing:</strong> Clear, upfront payment structure with escrow protection.</li>
+                        <li><strong>Creative Focus:</strong> Designed specifically for visual and creative industries.</li>
+                        <li><strong>Faster Hiring:</strong> Streamlined process from discovery to project completion.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-2-3">
+                <h3>2.3 Cost for Creators</h3>
+                <p>Unjob.ai operates on a subscription model for freelancers, providing transparent pricing without hidden fees.</p>
+                
+                <div class="highlight-box">
+                    <h4>Subscription Plans:</h4>
+                    <ul>
+                        <li><strong>Free Plan:</strong>
+                            <ul>
+                                <li>Basic profile creation</li>
+                                <li>Limited gig applications (5 per month)</li>
+                                <li>Standard portfolio visibility</li>
+                                <li>Basic messaging features</li>
+                            </ul>
+                        </li>
+                        <li><strong>Basic Monthly ($19/month):</strong>
+                            <ul>
+                                <li>Unlimited gig applications</li>
+                                <li>Enhanced portfolio visibility</li>
+                                <li>Priority customer support</li>
+                                <li>Advanced analytics</li>
+                            </ul>
+                        </li>
+                        <li><strong>Basic Annual ($190/year):</strong>
+                            <ul>
+                                <li>All monthly features</li>
+                                <li>2 months free (16% savings)</li>
+                                <li>Featured creator status</li>
+                                <li>Early access to new features</li>
+                            </ul>
+                        </li>
+                        <li><strong>Lifetime Plan ($499 one-time):</strong>
+                            <ul>
+                                <li>All premium features forever</li>
+                                <li>No recurring payments</li>
+                                <li>Exclusive community access</li>
+                                <li>Maximum visibility boost</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="warning-box">
+                    <h4>Important Notes:</h4>
+                    <ul>
+                        <li>No commission fees on earnings (unlike other platforms that charge 10-20%)</li>
+                        <li>Payment processing fees may apply for withdrawals</li>
+                        <li>Subscription required to access full gig marketplace</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-2-4">
+                <h3>2.4 Accepted Content Types</h3>
+                <p>Unjob.ai supports a wide variety of creative content formats to showcase your skills effectively.</p>
+                
+                <div class="highlight-box">
+                    <h4>Supported Media Types:</h4>
+                    <ul>
+                        <li><strong>Videos:</strong> MP4, MOV, AVI (max 500MB, up to 10 minutes)</li>
+                        <li><strong>Images:</strong> JPEG, PNG, GIF (max 10MB each)</li>
+                        <li><strong>Documents:</strong> PDF, DOC, DOCX (max 25MB)</li>
+                        <li><strong>Design Files:</strong> PSD, AI, SKETCH, FIGMA links</li>
+                        <li><strong>Audio:</strong> MP3, WAV (max 50MB)</li>
+                        <li><strong>Links:</strong> Behance, Dribbble, YouTube, Vimeo, personal websites</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Content Categories:</h4>
+                    <ul>
+                        <li><strong>Video Production:</strong> Reels, YouTube videos, commercials, documentaries</li>
+                        <li><strong>Graphic Design:</strong> Logos, branding, posters, social media graphics</li>
+                        <li><strong>Animation:</strong> 2D/3D animations, motion graphics, explainer videos</li>
+                        <li><strong>Photography:</strong> Product photos, portraits, event photography</li>
+                        <li><strong>Web Design:</strong> Website mockups, UI/UX designs, app interfaces</li>
+                        <li><strong>Writing:</strong> Articles, scripts, copywriting, social media content</li>
+                        <li><strong>Social Media:</strong> UGC, influencer content, campaign materials</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-2-5">
+                <h3>2.5 Direct Communication Policy (Do's & Don'ts)</h3>
+                <p>Unjob.ai encourages professional communication while maintaining platform security and user safety.</p>
+                
+                <div class="success-box">
+                    <h4>Do's:</h4>
+                    <ul>
+                        <li>Use the built-in messaging system for all project communication</li>
+                        <li>Share project files through the platform's file sharing feature</li>
+                        <li>Maintain professional tone and clear communication</li>
+                        <li>Document important project decisions in messages</li>
+                        <li>Respond to messages within 24 hours during active projects</li>
+                        <li>Use video calls for complex project discussions (arrange through platform)</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-box">
+                    <h4>Don'ts:</h4>
+                    <ul>
+                        <li>Share personal contact information (phone, email, social media) in initial conversations</li>
+                        <li>Attempt to conduct business outside the platform to avoid fees</li>
+                        <li>Send unsolicited promotional content or spam messages</li>
+                        <li>Use inappropriate language or unprofessional behavior</li>
+                        <li>Share payment information through messages (use platform's secure payment system)</li>
+                        <li>Pressure users to move conversations to external platforms</li>
+                    </ul>
+                </div>
+                
+                <p><strong>Security Note:</strong> All messages are monitored for platform security. Violations may result in account suspension.</p>
+            </div>
+
+            <div id="section-2-6">
+                <h3>2.6 Home Page Functionality Overview</h3>
+                <p>The home page serves as the central hub with different layouts for freelancers and companies.</p>
+                
+                <div class="highlight-box">
+                    <h4>For Freelancers:</h4>
+                    <ul>
+                        <li><strong>Feed:</strong> Updates from followed creators and relevant industry content</li>
+                        <li><strong>Recommended Gigs:</strong> AI-curated project suggestions based on your portfolio</li>
+                        <li><strong>Quick Stats:</strong> Application status, earnings overview, and recent activity</li>
+                        <li><strong>Trending Content:</strong> Popular posts and successful creator stories</li>
+                        <li><strong>Skill-Based Insights:</strong> Industry trends and tips for your specialization</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>For Companies:</h4>
+                    <ul>
+                        <li><strong>Featured Creators:</strong> Highlighted talent matching your recent searches</li>
+                        <li><strong>Active Gigs Dashboard:</strong> Overview of posted projects and application status</li>
+                        <li><strong>Creator Spotlight:</strong> Weekly featured portfolios and success stories</li>
+                        <li><strong>Industry Insights:</strong> Hiring trends and best practices for creative projects</li>
+                        <li><strong>Quick Actions:</strong> Fast access to post gigs, review applications, or search talent</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-2-7">
+                <h3>2.7 Contacting Support & Dispute Resolution Team</h3>
+                <p>Unjob.ai provides multiple channels for user support and professional dispute resolution services.</p>
+                
+                <div class="highlight-box">
+                    <h4>Support Channels:</h4>
+                    <ul>
+                        <li><strong>Help Center:</strong> Comprehensive FAQ and self-service articles</li>
+                        <li><strong>Live Chat:</strong> Available Monday-Friday, 9 AM - 6 PM IST</li>
+                        <li><strong>Email Support:</strong> tajveer.singh@unjob.ai (response within 24 hours)</li>
+                        <li><strong>Support Tickets:</strong> In-app ticket system for detailed issues</li>
+                        <li><strong>Video Support:</strong> Screen-sharing sessions for complex technical issues</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Dispute Resolution Process:</h4>
+                    <ol>
+                        <li><strong>Initial Communication:</strong> Attempt to resolve issues directly with the other party</li>
+                        <li><strong>Formal Dispute:</strong> File a dispute through the platform within 14 days of project completion</li>
+                        <li><strong>Evidence Submission:</strong> Provide all relevant documentation, messages, and files</li>
+                        <li><strong>Mediation:</strong> Unjob.ai mediator reviews all evidence and facilitates resolution</li>
+                        <li><strong>Final Decision:</strong> Binding decision made within 5-7 business days</li>
+                        <li><strong>Payment Resolution:</strong> Funds distributed according to the decision</li>
+                    </ol>
+                </div>
+        </div>
+
+        <div id="section-3" class="section">
+            <h2>3. Getting Started</h2>
+            <p>This section covers the initial steps to begin using Unjob.ai, including creating an account, logging in or out, and navigating the dashboard for both freelancers and companies.</p>
+
+            <div id="section-3-1">
+                <h3>3.1 Account Registration – Freelancers</h3>
+                <p>To work on Unjob.ai as a freelancer (creator), you must first create a freelancer account.</p>
+                
+                <h4>Steps to register:</h4>
+                <ol>
+                    <li>Open the Unjob.ai homepage in your preferred web browser.</li>
+                    <li>Click <strong>Sign Up</strong> in the top-right corner of the page.</li>
+                    <li>On the registration form, select <strong>Freelancer</strong> as your account type.</li>
+                    <li>Fill in the required fields:
+                        <ul>
+                            <li>First Name and Last Name</li>
+                            <li>Email Address (use a valid email for verification and communication)</li>
+                            <li>Password (must meet the platform's security requirements)</li>
+                            <li>Confirm Password</li>
+                        </ul>
+                    </li>
+                    <li>Check the box to agree to the Terms of Service and Privacy Policy.</li>
+                    <li>Click <strong>Register</strong>.</li>
+                    <li>Verify your email by clicking the confirmation link sent to your inbox.</li>
+                </ol>
+                
+                <div class="highlight-box">
+                    <h4>After registration, complete your freelancer profile:</h4>
+                    <ul>
+                        <li>Upload a Profile Photo and Cover Photo.</li>
+                        <li>Write a Bio describing your skills, creative style, and professional background.</li>
+                        <li>Select your skills from the available list (multiple selections allowed).</li>
+                        <li>Start posting your work — note that any project added to your portfolio must first be uploaded as a Post.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-3-2">
+                <h3>3.2 Account Registration – Companies</h3>
+                <p>Companies, brands, or hiring managers must create a company account to post gigs and hire freelancers.</p>
+                
+                <h4>Steps to register:</h4>
+                <ol>
+                    <li>Go to Unjob.ai and click <strong>Sign Up</strong> in the top-right corner.</li>
+                    <li>Select <strong>Company</strong> as your account type.</li>
+                    <li>Fill in the required company details:
+                        <ul>
+                            <li>Company Name</li>
+                            <li>Contact Person Name</li>
+                            <li>Business Email</li>
+                            <li>Company Size (e.g., 1–10 employees, 11–50 employees)</li>
+                            <li>Industry (e.g., Marketing, E-Commerce, Media Production)</li>
+                            <li>Password and Confirm Password</li>
+                        </ul>
+                    </li>
+                    <li>Check the box to agree to the Terms of Service.</li>
+                    <li>Click <strong>Register</strong>.</li>
+                    <li>Verify your email by clicking the confirmation link sent to your inbox.</li>
+                </ol>
+                
+                <div class="highlight-box">
+                    <h4>After registration, you can:</h4>
+                    <ul>
+                        <li>Create new gigs to find freelancers.</li>
+                        <li>Review applications.</li>
+                        <li>Manage ongoing projects and payments from the Company Dashboard.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-3-3">
+                <h3>3.3 Logging In & Out</h3>
+                
+                <h4>Logging In:</h4>
+                <ol>
+                    <li>Visit the Unjob.ai homepage.</li>
+                    <li>Click <strong>Log In</strong> in the top-right corner.</li>
+                    <li>Enter your registered email and password.</li>
+                    <li>Click <strong>Log In</strong> to access your dashboard.</li>
+                </ol>
+                
+                <h4>Logging Out:</h4>
+                <ol>
+                    <li>From any page, click your Profile Icon in the top navigation bar.</li>
+                    <li>Select <strong>Log Out</strong> from the dropdown menu.</li>
+                    <li>You will be signed out and redirected to the homepage.</li>
+                </ol>
+            </div>
+
+            <div id="section-3-4">
+                <h3>3.4 Navigating the Dashboard</h3>
+                <p>Your dashboard layout will differ based on whether you are logged in as a freelancer or a company.</p>
+                
+                <h4>Freelancer Dashboard Sections:</h4>
+                <ul>
+                    <li><strong>Home</strong> – Displays posts and updates relevant to your skills and interests.</li>
+                    <li><strong>Gigs</strong> – Browse available gigs (subscription required for full access).</li>
+                    <li><strong>Notifications</strong> – Shows updates such as application responses, messages, and company pitches. Includes the option to mark all as read.</li>
+                    <li><strong>Messages</strong> – Displays all conversations with companies.</li>
+                    <li><strong>Add Post</strong> – Upload creative content to your profile (required before adding to your portfolio).</li>
+                    <li><strong>Profile</strong> – Edit personal details, update skills, and manage your portfolio.</li>
+                    <li><strong>Settings</strong> – View project status, payment history, and subscription details.</li>
+                </ul>
+                
+                <h4>Company Dashboard Sections:</h4>
+                <ul>
+                    <li><strong>Home</strong> – Overview of recent activity and content from creators.</li>
+                    <li><strong>Search/Browse</strong> – (If available) Search for creators or view posted gigs.</li>
+                    <li><strong>Create Gig</strong> – Post new project opportunities for freelancers.</li>
+                    <li><strong>Review Applications</strong> – View candidate applications and mark them with green (accept) or red (reject) icons.</li>
+                    <li><strong>Messages</strong> – Communicate directly with freelancers.</li>
+                    <li><strong>Settings</strong> – Manage company account details, payment methods, and gig listings.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="section-4" class="section">
+            <h2>4. For Freelancers (Creators)</h2>
+            <p>This section guides freelancers (creators) through the key tools and features available on Unjob.ai to help them find work, engage with clients, and grow their professional presence.</p>
+
+            <div id="section-4-1">
+                <h3>4.1 Creator Onboarding Process</h3>
+                <p>After registering, freelancers go through a structured onboarding process to optimize their profile for maximum visibility.</p>
+                
+                <div class="highlight-box">
+                    <h4>Onboarding Steps:</h4>
+                    <ol>
+                        <li><strong>Welcome Tutorial:</strong> Interactive guide showing key platform features</li>
+                        <li><strong>Profile Completion:</strong> Upload profile photo, write bio, and select skills</li>
+                        <li><strong>First Post Creation:</strong> Upload your best work to establish your creative style</li>
+                        <li><strong>Portfolio Setup:</strong> Select posts to feature in your portfolio</li>
+                        <li><strong>Subscription Selection:</strong> Choose a plan that fits your needs</li>
+                        <li><strong>Verification Process:</strong> Email verification and optional identity verification</li>
+                        <li><strong>AI Calibration:</strong> System analyzes your content to improve matching accuracy</li>
+                    </ol>
+                </div>
+                
+                <div class="success-box">
+                    <h4>Onboarding Tips:</h4>
+                    <ul>
+                        <li>Complete all steps for maximum profile visibility</li>
+                        <li>Upload high-quality, diverse portfolio pieces</li>
+                        <li>Use relevant keywords in your bio and project descriptions</li>
+                        <li>Enable notifications to stay updated on opportunities</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-2">
+                <h3>4.2 Home Section Overview</h3>
+                <p>The Home section acts as the central hub for all freelancer activities.</p>
+                
+                <div class="highlight-box">
+                    <h4>You will see:</h4>
+                    <ul>
+                        <li><strong>Personalized Gig Recommendations</strong> – Suggested gigs based on your skills, interests, and previous activity.</li>
+                        <li><strong>Recent Updates</strong> – Platform news, feature updates, and relevant industry insights.</li>
+                        <li><strong>Quick Actions Panel</strong> – Shortcuts to post content, update your portfolio, or check messages.</li>
+                        <li><strong>Trending Opportunities</strong> – Gigs in high demand or with urgent deadlines.</li>
+                        <li><strong>Activity Feed</strong> – Updates from creators you follow and industry-relevant content.</li>
+                        <li><strong>Performance Metrics</strong> – Quick view of profile views, application responses, and earnings.</li>
+                    </ul>
+                </div>
+                
+                <p><strong>Navigation Tip:</strong> The Home section refreshes automatically to show the most relevant opportunities based on your activity and preferences.</p>
+            </div>
+
+            <div id="section-4-3">
+                <h3>4.3 Gigs Section</h3>
+                <p>The Gigs section is where freelancers can browse, filter, and apply for available opportunities.</p>
+            </div>
+
+            <div id="section-4-3-1">
+                <h4>4.3.1 Browsing Gigs</h4>
+                <div class="highlight-box">
+                    <h4>Browsing Features:</h4>
+                    <ul>
+                        <li><strong>Categories & Filters</strong> – Narrow down gigs by skill set, budget range, timeline, industry, or project type</li>
+                        <li><strong>Search Bar</strong> – Enter keywords to find specific projects or companies</li>
+                        <li><strong>Gig Cards</strong> – Each listing shows title, budget, client rating, deadline, and required skills at a glance</li>
+                        <li><strong>Save for Later</strong> – Bookmark gigs to review and apply later</li>
+                        <li><strong>Sort Options</strong> – By newest, highest paying, deadline, or relevance</li>
+                        <li><strong>Advanced Filters</strong> – Location preferences, remote/local, experience level required</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-box">
+                    <h4>Subscription Requirements:</h4>
+                    <ul>
+                        <li>Free users can view limited gigs and apply to 5 per month</li>
+                        <li>Premium subscribers get full marketplace access and unlimited applications</li>
+                        <li>Featured gigs are visible to subscribers first</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-3-2">
+                <h4>4.3.2 Applying to Gigs</h4>
+                <div class="highlight-box">
+                    <h4>Application Process:</h4>
+                    <ol>
+                        <li><strong>Gig Details Page</strong> – Review full description, required skills, deliverables, and timeline</li>
+                        <li><strong>Check Requirements</strong> – Ensure your skills match the project needs</li>
+                        <li><strong>Custom Proposal</strong> – Write a personalized message highlighting relevant experience</li>
+                        <li><strong>Portfolio Samples</strong> – Attach 2-3 relevant portfolio pieces</li>
+                        <li><strong>Timeline & Budget</strong> – Confirm availability and pricing expectations</li>
+                        <li><strong>Submit Application</strong> – Review and submit your proposal</li>
+                        <li><strong>Track Status</strong> – Monitor application progress in your dashboard</li>
+                    </ol>
+                </div>
+                
+                <div class="success-box">
+                    <h4>Application Best Practices:</h4>
+                    <ul>
+                        <li>Personalize each proposal to the specific project</li>
+                        <li>Highlight relevant experience and results</li>
+                        <li>Include portfolio pieces that directly relate to the gig</li>
+                        <li>Be realistic about timelines and budget</li>
+                        <li>Ask clarifying questions if project details are unclear</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-4">
+                <h3>4.4 Notifications Panel</h3>
+                <p>Keeps you informed about all platform activities and opportunities.</p>
+                
+                <div class="highlight-box">
+                    <h4>Notification Types:</h4>
+                    <ul>
+                        <li><strong>Application Updates</strong> – Status changes, acceptances, rejections</li>
+                        <li><strong>Direct Messages</strong> – New messages from companies or platform</li>
+                        <li><strong>Gig Matches</strong> – New gigs matching your skills and preferences</li>
+                        <li><strong>Payment Notifications</strong> – Payment releases, withdrawals processed</li>
+                        <li><strong>Profile Activity</strong> – Profile views, portfolio likes, follows</li>
+                        <li><strong>Platform Updates</strong> – New features, policy changes, maintenance</li>
+                        <li><strong>Deadline Reminders</strong> – Upcoming project deadlines and milestones</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Notification Settings:</h4>
+                    <ul>
+                        <li>Customize which notifications you receive</li>
+                        <li>Set preferences for email, in-app, or SMS alerts</li>
+                        <li>Configure quiet hours and frequency</li>
+                        <li>Priority settings for urgent vs. regular notifications</li>
+                        <li>Mark all as read functionality</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-5">
+                <h3>4.5 Messages</h3>
+                <p>The messaging system enables direct communication with clients and platform support.</p>
+                
+                <div class="highlight-box">
+                    <h4>Messaging Features:</h4>
+                    <ul>
+                        <li><strong>Inbox View</strong> – All conversations sorted by most recent activity</li>
+                        <li><strong>Threaded Conversations</strong> – Keep all communication for specific projects organized</li>
+                        <li><strong>File Sharing</strong> – Send documents, images, videos, and project files (up to 25MB)</li>
+                        <li><strong>Rich Text Formatting</strong> – Bold, italics, lists, and links in messages</li>
+                        <li><strong>Read Receipts</strong> – Know when clients have read your messages</li>
+                        <li><strong>Typing Indicators</strong> – See when someone is actively typing</li>
+                        <li><strong>Message Search</strong> – Find specific conversations or information quickly</li>
+                        <li><strong>Archive Conversations</strong> – Clean up your inbox while preserving message history</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-box">
+                    <h4>Message Guidelines:</h4>
+                    <ul>
+                        <li>Respond to client messages within 24 hours</li>
+                        <li>Keep all project communication within the platform</li>
+                        <li>Use professional language and tone</li>
+                        <li>Don't share external contact information in initial conversations</li>
+                        <li>Report inappropriate or spam messages to support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-6">
+                <h3>4.6 Creating a Post</h3>
+                <p>Posts are the foundation of your Unjob.ai presence and must be created before adding items to your portfolio.</p>
+                
+                <div class="highlight-box">
+                    <h4>Post Creation Process:</h4>
+                    <ol>
+                        <li><strong>Click "Add Post"</strong> – Access the post creation interface</li>
+                        <li><strong>Choose Content Type</strong> – Video, image, document, or link</li>
+                        <li><strong>Upload Media</strong> – Add your creative work (check file size limits)</li>
+                        <li><strong>Add Title & Description</strong> – Clear, descriptive, keyword-rich content</li>
+                        <li><strong>Select Categories</strong> – Choose relevant categories for better discoverability</li>
+                        <li><strong>Add Tags</strong> – Include relevant skills, tools, and industry keywords</li>
+                        <li><strong>Set Visibility</strong> – Public, followers only, or portfolio only</li>
+                        <li><strong>Preview & Publish</strong> – Review how your post will appear before publishing</li>
+                    </ol>
+                </div>
+                
+                <div class="success-box">
+                    <h4>Post Optimization Tips:</h4>
+                    <ul>
+                        <li><strong>Quality First:</strong> Only upload your best work</li>
+                        <li><strong>Storytelling:</strong> Explain the project context, challenges, and solutions</li>
+                        <li><strong>Process Documentation:</strong> Show before/after or step-by-step progress</li>
+                        <li><strong>Client Results:</strong> Include metrics and outcomes when possible</li>
+                        <li><strong>Tool Mentions:</strong> List software and techniques used</li>
+                        <li><strong>Regular Updates:</strong> Post consistently to maintain visibility</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-7">
+                <h3>4.7 Profile Setup & Editing</h3>
+                <p>A complete, professional profile significantly increases your chances of getting hired and receiving direct pitches from companies.</p>
+            </div>
+
+            <div id="section-4-7-1">
+                <h4>4.7.1 Profile Photo & Cover Photo</h4>
+                
+                <div class="highlight-box">
+                    <h4>Profile Photo Requirements:</h4>
+                    <ul>
+                        <li><strong>Professional headshot</strong> – Clear, well-lit photo of your face</li>
+                        <li><strong>High resolution</strong> – Minimum 400×400 pixels</li>
+                        <li><strong>File format</strong> – JPEG or PNG</li>
+                        <li><strong>Background</strong> – Neutral, non-distracting background</li>
+                        <li><strong>Dress code</strong> – Professional or creative attire appropriate for your industry</li>
+                        <li><strong>Facial visibility</strong> – Face clearly visible, looking at camera</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Cover Photo Guidelines:</h4>
+                    <ul>
+                        <li><strong>Showcase your work</strong> – Feature your best creative pieces</li>
+                        <li><strong>Brand consistency</strong> – Align with your creative style and colors</li>
+                        <li><strong>Recommended size</strong> – 1200×300 pixels</li>
+                        <li><strong>Text overlay</strong> – Include your specialization or tagline if desired</li>
+                        <li><strong>Regular updates</strong> – Change seasonally or when you have new standout work</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-box">
+                    <h4>Avoid:</h4>
+                    <ul>
+                        <li>Casual selfies or group photos</li>
+                        <li>Low-quality or blurry images</li>
+                        <li>Overly busy or distracting backgrounds</li>
+                        <li>Inappropriate or unprofessional content</li>
+                        <li>Copyright-protected images that aren't your work</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-7-2">
+                <h4>4.7.2 Adding Skills</h4>
+                <div class="highlight-box">
+                    <h4>Skill Management Process:</h4>
+                    <ol>
+                        <li><strong>Navigate to Profile Editor</strong> – Click "Edit Profile" in your profile section</li>
+                        <li><strong>Find Skills Section</strong> – Locate the skills and expertise area</li>
+                        <li><strong>Search and Select</strong> – Choose from predefined skills or request new ones</li>
+                        <li><strong>Prioritize Top Skills</strong> – List your strongest capabilities first</li>
+                        <li><strong>Add Skill Levels</strong> – Indicate beginner, intermediate, advanced, or expert</li>
+                        <li><strong>Include Tools & Software</strong> – Specify technical proficiencies</li>
+                        <li><strong>Save Changes</strong> – Update your profile with new skills</li>
+                    </ol>
+                </div>
+                
+                <div class="success-box">
+                    <h4>Skill Selection Strategy:</h4>
+                    <ul>
+                        <li><strong>Focus on Demand:</strong> Prioritize skills that are frequently requested in gigs</li>
+                        <li><strong>Be Specific:</strong> "Social Media Video Editing" is better than just "Video Editing"</li>
+                        <li><strong>Include Tools:</strong> List specific software like "Adobe After Effects," "Figma," "Final Cut Pro"</li>
+                        <li><strong>Limit Quantity:</strong> Choose 10-15 most relevant skills rather than listing everything</li>
+                        <li><strong>Update Regularly:</strong> Add new skills as you learn and remove outdated ones</li>
+                        <li><strong>Match Portfolio:</strong> Ensure your skills align with the work shown in your portfolio</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-8">
+                <h3>4.8 Portfolio Management</h3>
+                <p>Your portfolio is the most critical component of your Unjob.ai profile, showcasing your best work to attract potential clients.</p>
+            </div>
+
+            <div id="section-4-8-1">
+                <h4>4.8.1 Adding Projects</h4>
+                <div class="highlight-box">
+                    <h4>Portfolio Project Creation:</h4>
+                    <ol>
+                        <li><strong>Select from Posts</strong> – Choose existing posts to feature in portfolio</li>
+                        <li><strong>Project Title</strong> – Clear, descriptive title that explains the work</li>
+                        <li><strong>Detailed Description</strong> – Include:
+                            <ul>
+                                <li>Project scope and objectives</li>
+                                <li>Your specific role and responsibilities</li>
+                                <li>Tools and techniques used</li>
+                                <li>Challenges faced and solutions implemented</li>
+                                <li>Results achieved and client feedback</li>
+                            </ul>
+                        </li>
+                        <li><strong>Category Selection</strong> – Choose appropriate project category</li>
+                        <li><strong>Media Arrangement</strong> – Order images/videos to tell the project story</li>
+                        <li><strong>Client Information</strong> – Add client name (with permission) or use "Confidential Client"</li>
+                        <li><strong>Project Duration</strong> – Timeline from start to completion</li>
+                    </ol>
+                </div>
+                
+                <div class="success-box">
+                    <h4>Portfolio Best Practices:</h4>
+                    <ul>
+                        <li><strong>Quality over Quantity:</strong> 8-12 exceptional pieces better than 20 average ones</li>
+                        <li><strong>Diversity:</strong> Show range within your specialization</li>
+                        <li><strong>Recent Work:</strong> Keep portfolio current with your latest capabilities</li>
+                        <li><strong>Process Documentation:</strong> Include sketches, wireframes, or behind-the-scenes content</li>
+                        <li><strong>Results-Focused:</strong> Highlight measurable outcomes when possible</li>
+                        <li><strong>Client Permission:</strong> Only showcase work you have rights to display</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-8-2">
+                <h4>4.8.2 Linking Posts to Portfolio</h4>
+                <p>Unjob.ai requires all portfolio items to first exist as posts, creating a seamless connection between your activity feed and professional showcase.</p>
+                
+                <div class="highlight-box">
+                    <h4>Linking Process:</h4>
+                    <ol>
+                        <li><strong>Create Post First</strong> – Upload content as a regular post</li>
+                        <li><strong>Navigate to Portfolio</strong> – Go to your portfolio management section</li>
+                        <li><strong>Select "Add to Portfolio"</strong> – Choose from your existing posts</li>
+                        <li><strong>Enhanced Description</strong> – Add more detailed portfolio-specific information</li>
+                        <li><strong>Arrange Order</strong> – Organize portfolio items by importance or chronology</li>
+                        <li><strong>Preview Portfolio</strong> – See how it appears to potential clients</li>
+                    </ol>
+                </div>
+                
+                <div class="warning-box">
+                    <h4>Important Notes:</h4>
+                    <ul>
+                        <li>You cannot add items directly to portfolio without creating a post first</li>
+                        <li>Changes to the original post will reflect in the portfolio item</li>
+                        <li>Deleting a post will remove it from your portfolio</li>
+                        <li>Portfolio items maintain engagement metrics from the original post</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-9">
+                <h3>4.9 Content Visibility & AI Recommendations (How It Works & Best Practices)</h3>
+                <p>Unjob.ai's AI system analyzes your content to match you with relevant opportunities and increase your visibility to potential clients.</p>
+                
+                <div class="highlight-box">
+                    <h4>How AI Matching Works:</h4>
+                    <ul>
+                        <li><strong>Content Analysis:</strong> AI analyzes your portfolio for style, color palettes, composition, and techniques</li>
+                        <li><strong>Tool Recognition:</strong> System identifies software and tools used in your work</li>
+                        <li><strong>Industry Classification:</strong> Projects are categorized by industry and use case</li>
+                        <li><strong>Skill Validation:</strong> Your claimed skills are verified against your actual work</li>
+                        <li><strong>Performance Tracking:</strong> Success rates and client feedback improve future matching</li>
+                        <li><strong>Preference Learning:</strong> System learns from your application patterns and preferences</li>
+                    </ul>
+                </div>
+                
+                <div class="success-box">
+                    <h4>Optimization Strategies:</h4>
+                    <ul>
+                        <li><strong>Consistent Style:</strong> Maintain recognizable creative style across portfolio</li>
+                        <li><strong>Detailed Descriptions:</strong> Use specific keywords that clients search for</li>
+                        <li><strong>Regular Updates:</strong> Post new content regularly to stay visible in feeds</li>
+                        <li><strong>Engagement:</strong> Interact with other creators and company posts</li>
+                        <li><strong>Complete Profile:</strong> Fill out all profile sections for better AI understanding</li>
+                        <li><strong>Tag Optimization:</strong> Use relevant, specific tags rather than generic ones</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-10">
+                <h3>4.10 Content Tagging & Categorization for Maximum Reach</h3>
+                <p>Proper tagging and categorization significantly improve your discoverability by both AI algorithms and client searches.</p>
+                
+                <div class="highlight-box">
+                    <h4>Tagging Strategy:</h4>
+                    <ul>
+                        <li><strong>Primary Skill Tags:</strong> Main service you're providing (e.g., "Logo Design," "Video Editing")</li>
+                        <li><strong>Tool Tags:</strong> Software used (e.g., "Adobe Illustrator," "Final Cut Pro," "Canva")</li>
+                        <li><strong>Industry Tags:</strong> Target market (e.g., "Healthcare," "E-commerce," "Real Estate")</li>
+                        <li><strong>Style Tags:</strong> Creative approach (e.g., "Minimalist," "Vintage," "Modern")</li>
+                        <li><strong>Format Tags:</strong> Content type (e.g., "Instagram Reel," "YouTube Thumbnail," "Business Card")</li>
+                        <li><strong>Outcome Tags:</strong> Results achieved (e.g., "Increased Engagement," "Brand Recognition")</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Category Selection Guidelines:</h4>
+                    <ul>
+                        <li><strong>Be Specific:</strong> Choose the most specific category that applies to your work</li>
+                        <li><strong>Primary Focus:</strong> Select categories that represent 80% of your work</li>
+                        <li><strong>Market Demand:</strong> Research which categories have the most active gigs</li>
+                        <li><strong>Competition Analysis:</strong> Balance popular categories with niche specializations</li>
+                        <li><strong>Skill Evolution:</strong> Update categories as your skills develop</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-11">
+                <h3>4.11 Post vs. Portfolio – Differences & Best Use Cases</h3>
+                <p>Understanding the distinction between posts and portfolio items helps you leverage both effectively for maximum impact.</p>
+                
+                <div class="highlight-box">
+                    <h4>Posts:</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Share updates, work-in-progress, behind-the-scenes content</li>
+                        <li><strong>Audience:</strong> Followers, algorithm feed, potential connections</li>
+                        <li><strong>Content:</strong> Can include casual content, process shots, client testimonials</li>
+                        <li><strong>Frequency:</strong> Regular posting (2-3 times per week recommended)</li>
+                        <li><strong>Engagement:</strong> Designed for likes, comments, and social interaction</li>
+                        <li><strong>Flexibility:</strong> Easy to edit, delete, or update</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Portfolio:</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Showcase your absolute best work to potential clients</li>
+                        <li><strong>Audience:</strong> Companies evaluating you for projects</li>
+                        <li><strong>Content:</strong> Only polished, professional, completed projects</li>
+                        <li><strong>Curation:</strong> Highly selective (8-15 pieces maximum)</li>
+                        <li><strong>Presentation:</strong> Detailed descriptions, project context, results</li>
+                        <li><strong>Stability:</strong> Should remain consistent, updated strategically</li>
+                    </ul>
+                </div>
+                
+                <div class="success-box">
+                    <h4>Strategic Use Cases:</h4>
+                    <ul>
+                        <li><strong>Posts for Engagement:</strong> Share tips, tutorials, client wins, personal insights</li>
+                        <li><strong>Portfolio for Conversion:</strong> Feature work that directly relates to gigs you want</li>
+                        <li><strong>Cross-Promotion:</strong> Use posts to drive traffic to your portfolio pieces</li>
+                        <li><strong>Content Repurposing:</strong> Break down portfolio projects into multiple posts</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-12">
+                <h3>4.12 Tips for Building a Strong Portfolio (Recommended Number of Projects & Media Types)</h3>
+                <p>A well-crafted portfolio can be the difference between getting hired and being overlooked.</p>
+                
+                <div class="highlight-box">
+                    <h4>Portfolio Composition:</h4>
+                    <ul>
+                        <li><strong>Optimal Number:</strong> 8-12 projects (quality over quantity)</li>
+                        <li><strong>Project Variety:</strong> 
+                            <ul>
+                                <li>70% - Your primary specialty</li>
+                                <li>20% - Related skills</li>
+                                <li>10% - Experimental or passion projects</li>
+                            </ul>
+                        </li>
+                        <li><strong>Media Distribution:</strong>
+                            <ul>
+                                <li>60% - Visual work (images, videos, designs)</li>
+                                <li>30% - Process documentation (before/after, workflows)</li>
+                                <li>10% - Client testimonials and results</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="success-box">
+                    <h4>Portfolio Enhancement Tips:</h4>
+                    <ul>
+                        <li><strong>Tell Stories:</strong> Each project should have a clear narrative arc</li>
+                        <li><strong>Show Results:</strong> Include metrics, testimonials, or outcome data</li>
+                        <li><strong>Demonstrate Range:</strong> Show versatility within your expertise</li>
+                        <li><strong>Process Transparency:</strong> Include sketches, wireframes, or iterations</li>
+                        <li><strong>Client Context:</strong> Explain the business problem you solved</li>
+                        <li><strong>Technical Details:</strong> List tools, techniques, and timeframes</li>
+                        <li><strong>Regular Updates:</strong> Refresh portfolio quarterly with new work</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-13">
+                <h3>4.13 Getting Work on Unjob.ai</h3>
+                <p>Unjob.ai offers two primary pathways to secure projects: applying to posted gigs and receiving direct pitches from companies.</p>
+            </div>
+
+            <div id="section-4-13-1">
+                <h4>4.13.1 How Brands Approach Creators</h4>
+                <p>Companies can discover and contact creators directly through portfolio browsing and AI recommendations.</p>
+                
+                <div class="highlight-box">
+                    <h4>How Companies Find You:</h4>
+                    <ul>
+                        <li><strong>Portfolio Browsing:</strong> Companies search by skills, style, or industry</li>
+                        <li><strong>AI Recommendations:</strong> System suggests creators based on project requirements</li>
+                        <li><strong>Content Discovery:</strong> Your posts appear in relevant feeds and searches</li>
+                        <li><strong>Previous Connections:</strong> Past clients may return for additional work</li>
+                        <li><strong>Referrals:</strong> Other creators or clients recommend your services</li>
+                        <li><strong>Featured Placement:</strong> Premium subscribers get enhanced visibility</li>
+                    </ul>
+                </div>
+                
+                <div class="success-box">
+                    <h4>Increasing Direct Pitch Likelihood:</h4>
+                    <ul>
+                        <li><strong>Complete Profile:</strong> Fill out every section thoroughly</li>
+                        <li><strong>Showcase Versatility:</strong> Demonstrate range within your specialty</li>
+                        <li><strong>Professional Presentation:</strong> High-quality images and detailed descriptions</li>
+                        <li><strong>Responsive Communication:</strong> Quick response times to messages</li>
+                        <li><strong>Positive Reviews:</strong> Maintain high ratings from completed projects</li>
+                        <li><strong>Active Presence:</strong> Regular posting and platform engagement</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-13-2">
+                <h4>4.13.2 How Creators Approach Brands</h4>
+                <p>Proactive creators can also reach out to companies and apply for posted opportunities.</p>
+                
+                <div class="highlight-box">
+                    <h4>Proactive Strategies:</h4>
+                    <ul>
+                        <li><strong>Gig Applications:</strong> Apply to relevant posted projects with customized proposals</li>
+                        <li><strong>Company Research:</strong> Study company profiles and tailor your approach</li>
+                        <li><strong>Direct Messaging:</strong> Reach out to companies with relevant portfolio pieces</li>
+                        <li><strong>Content Strategy:</strong> Create posts that address common industry challenges</li>
+                        <li><strong>Network Building:</strong> Connect with other creators and companies</li>
+                        <li><strong>Thought Leadership:</strong> Share insights and tips in your area of expertise</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-box">
+                    <h4>Best Practices for Outreach:</h4>
+                    <ul>
+                        <li>Research the company's recent projects and brand style</li>
+                        <li>Reference specific work in their portfolio that resonates with you</li>
+                        <li>Propose specific solutions to challenges they might face</li>
+                        <li>Keep initial messages concise and focused</li>
+                        <li>Include 2-3 highly relevant portfolio pieces</li>
+                        <li>Follow up professionally if you don't hear back within a week</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-14">
+                <h3>4.14 Managing Projects & Deliverables</h3>
+                <p>Once hired, effective project management ensures successful completion and client satisfaction.</p>
+            </div>
+
+            <div id="section-4-14-1">
+                <h4>4.14.1 Accepting Offers</h4>
+                <div class="highlight-box">
+                    <h4>Offer Evaluation Process:</h4>
+                    <ol>
+                        <li><strong>Review Project Details:</strong> Scope, timeline, budget, and deliverables</li>
+                        <li><strong>Assess Feasibility:</strong> Can you deliver quality work within the timeframe?</li>
+                        <li><strong>Check Client History:</strong> Review their ratings and previous project feedback</li>
+                        <li><strong>Clarify Requirements:</strong> Ask questions about unclear aspects</li>
+                        <li><strong>Negotiate if Needed:</strong> Discuss timeline or scope adjustments</li>
+                        <li><strong>Accept Formally:</strong> Use the platform's acceptance feature</li>
+                        <li><strong>Project Kickoff:</strong> Schedule initial discussion and confirm milestones</li>
+                    </ol>
+                </div>
+                
+                <div class="warning-box">
+                    <h4>Red Flags to Watch For:</h4>
+                    <ul>
+                        <li>Extremely tight deadlines with complex requirements</li>
+                        <li>Budget significantly below market rates</li>
+                        <li>Vague project descriptions or unclear deliverables</li>
+                        <li>Client with consistently poor reviews</li>
+                        <li>Requests to work outside the platform</li>
+                        <li>Upfront payment requests or suspicious payment terms</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-14-2">
+                <h4>4.14.2 Submitting Work</h4>
+                <div class="highlight-box">
+                    <h4>Delivery Best Practices:</h4>
+                    <ul>
+                        <li><strong>Quality Check:</strong> Review all deliverables thoroughly before submission</li>
+                        <li><strong>File Organization:</strong> Properly name and organize all files</li>
+                        <li><strong>Format Compliance:</strong> Deliver in requested formats and specifications</li>
+                        <li><strong>Documentation:</strong> Include any necessary instructions or explanations</li>
+                        <li><strong>Source Files:</strong> Provide editable files when specified</li>
+                        <li><strong>Delivery Message:</strong> Include a professional summary of what's being delivered</li>
+                        <li><strong>Follow-up Support:</strong> Offer to answer questions or provide clarifications</li>
+                    </ul>
+                </div>
+                
+                <div class="success-box">
+                    <h4>Submission Checklist:</h4>
+                    <ul>
+                        <li>✓ All deliverables meet specified requirements</li>
+                        <li>✓ Files are properly formatted and named</li>
+                        <li>✓ Quality matches or exceeds portfolio samples</li>
+                        <li>✓ Any requested revisions have been addressed</li>
+                        <li>✓ Professional delivery message included</li>
+                        <li>✓ Contact information provided for follow-up questions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-14-3">
+                <h4>4.14.3 Handling Revision Requests</h4>
+                <p>Revisions are a normal part of creative work. Handle them professionally to maintain client relationships.</p>
+                
+                <div class="highlight-box">
+                    <h4>Revision Management:</h4>
+                    <ol>
+                        <li><strong>Understand Feedback:</strong> Ask clarifying questions about specific changes needed</li>
+                        <li><strong>Assess Scope:</strong> Determine if revisions fall within original project scope</li>
+                        <li><strong>Communicate Timeline:</strong> Provide realistic timeframe for implementing changes</li>
+                        <li><strong>Document Changes:</strong> Keep clear record of what needs to be modified</li>
+                        <li><strong>Implement Efficiently:</strong> Make requested changes systematically</li>
+                        <li><strong>Present Options:</strong> Offer multiple solutions when appropriate</li>
+                        <li><strong>Seek Approval:</strong> Confirm changes meet expectations before final delivery</li>
+                    </ol>
+                </div>
+                
+                <div class="warning-box">
+                    <h4>Scope Creep Management:</h4>
+                    <ul>
+                        <li>Clearly distinguish between revisions and additional work</li>
+                        <li>Reference original project scope when discussing changes</li>
+                        <li>Propose additional compensation for major scope expansions</li>
+                        <li>Document all changes and agreements in writing</li>
+                        <li>Set limits on the number of revision rounds</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-15">
+                <h3>4.15 Settings Menu</h3>
+                <p>The Settings menu provides access to project management, financial tracking, and account preferences.</p>
+            </div>
+
+            <div id="section-4-15-1">
+                <h4>4.15.1 Projects Tab (Application Status)</h4>
+                <div class="highlight-box">
+                    <h4>Project Tracking Features:</h4>
+                    <ul>
+                        <li><strong>Active Projects:</strong> Currently working on with deadlines and milestones</li>
+                        <li><strong>Pending Applications:</strong> Gigs you've applied to awaiting response</li>
+                        <li><strong>Interview Scheduled:</strong> Projects where you're being considered</li>
+                        <li><strong>Completed Projects:</strong> Finished work with payment status</li>
+                        <li><strong>Declined/Rejected:</strong> Applications that weren't successful</li>
+                        <li><strong>Draft Applications:</strong> Saved but not yet submitted proposals</li>
+                    </ul>
+                </div>
+                
+                <div class="success-box">
+                    <h4>Project Management Tips:</h4>
+                    <ul>
+                        <li>Regularly check deadlines and prioritize accordingly</li>
+                        <li>Use status updates to track progress on multiple projects</li>
+                        <li>Set personal deadlines ahead of client deadlines</li>
+                        <li>Archive completed projects to keep dashboard clean</li>
+                        <li>Follow up on pending applications after reasonable time</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-15-2">
+                <h4>4.15.2 Payments Tab (Earnings & Withdrawals)</h4>
+                <div class="highlight-box">
+                    <h4>Financial Dashboard:</h4>
+                    <ul>
+                        <li><strong>Current Balance:</strong> Available funds in your Unjob.ai wallet</li>
+                        <li><strong>Pending Payments:</strong> Projects completed but payment not yet released</li>
+                        <li><strong>Total Earnings:</strong> Lifetime earnings through the platform</li>
+                        <li><strong>Monthly Summary:</strong> Current month's income and project count</li>
+                        <li><strong>Withdrawal History:</strong> Record of all money transfers to your accounts</li>
+                        <li><strong>Tax Documents:</strong> Annual earning statements for tax purposes</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Withdrawal Options:</h4>
+                    <ul>
+                        <li><strong>Bank Transfer:</strong> Direct deposit to linked bank account (3-5 business days)</li>
+                        <li><strong>PayPal:</strong> Transfer to PayPal account (1-2 business days)</li>
+                        <li><strong>UPI:</strong> Instant transfer to UPI-linked accounts (India only)</li>
+                        <li><strong>International Wire:</strong> For freelancers outside supported regions</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-box">
+                    <h4>Withdrawal Requirements:</h4>
+                    <ul>
+                        <li>Minimum withdrawal amount: ₹500 / $10</li>
+                        <li>Valid payment method must be linked and verified</li>
+                        <li>Account must be in good standing with no active disputes</li>
+                        <li>Processing fees may apply depending on withdrawal method</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-15-3">
+                <h4>4.15.3 Subscription Plans</h4>
+                <div class="highlight-box">
+                    <h4>Plan Comparison:</h4>
+                    <ul>
+                        <li><strong>Free Plan:</strong>
+                            <ul>
+                                <li>5 gig applications per month</li>
+                                <li>Basic profile features</li>
+                                <li>Standard support</li>
+                                <li>Limited portfolio visibility</li>
+                            </ul>
+                        </li>
+                        <li><strong>Premium Monthly ($19/month):</strong>
+                            <ul>
+                                <li>Unlimited gig applications</li>
+                                <li>Enhanced profile visibility</li>
+                                <li>Priority support</li>
+                                <li>Advanced analytics</li>
+                                <li>Featured creator status</li>
+                            </ul>
+                        </li>
+                        <li><strong>Premium Annual ($190/year):</strong>
+                            <ul>
+                                <li>All monthly features</li>
+                                <li>16% cost savings</li>
+                                <li>Early access to new features</li>
+                                <li>Enhanced portfolio customization</li>
+                            </ul>
+                        </li>
+                        <li><strong>Lifetime Plan ($499):</strong>
+                            <ul>
+                                <li>All premium features forever</li>
+                                <li>Exclusive community access</li>
+                                <li>Maximum visibility boost</li>
+                                <li>Personal account manager</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-4-16">
+                <h3>4.16 Logging Out</h3>
+                <p>Properly logging out ensures account security, especially on shared devices.</p>
+                
+                <div class="highlight-box">
+                    <h4>Logout Process:</h4>
+                    <ol>
+                        <li>Click your profile avatar in the top-right corner</li>
+                        <li>Select "Log Out" from the dropdown menu</li>
+                        <li>Confirm logout if prompted</li>
+                        <li>You'll be redirected to the homepage</li>
+                        <li>Clear browser cache on shared devices for additional security</li>
+                    </ol>
+                </div>
+                
+                <div class="warning-box">
+                    <h4>Security Best Practices:</h4>
+                    <ul>
+                        <li>Always log out when using public or shared computers</li>
+                        <li>Don't save passwords on untrusted devices</li>
+                        <li>Use strong, unique passwords for your account</li>
+                        <li>Enable two-factor authentication if available</li>
+                        <li>Log out automatically after periods of inactivity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-5" class="section">
+            <h2>5. For Hiring Companies (Brands)</h2>
+            <p>This section guides company representatives, recruiters, and brand managers through Unjob.ai's hiring features, enabling them to efficiently find, evaluate, and hire top-tier freelancers (creators).</p>
+
+            <div id="section-5-1">
+                <h3>5.1 Brand Onboarding Process</h3>
+                <p>Companies undergo a structured onboarding process to optimize their profile and hiring capabilities.</p>
+                
+                <div class="highlight-box">
+                    <h4>Company Onboarding Steps:</h4>
+                    <ol>
+                        <li><strong>Account Verification:</strong> Email verification and business legitimacy check</li>
+                        <li><strong>Company Profile Setup:</strong> Add logo, description, and key information</li>
+                        <li><strong>Industry Selection:</strong> Choose primary business sectors and specializations</li>
+                        <li><strong>Hiring Preferences:</strong> Set budget ranges, project types, and skill requirements</li>
+                        <li><strong>Wallet Setup:</strong> Add payment methods and initial funding</li>
+                        <li><strong>Team Management:</strong> Add team members and assign roles if applicable</li>
+                        <li><strong>First Gig Guidance:</strong> Tutorial on creating effective project postings</li>
+                    </ol>
+                </div>
+                
+                <div class="success-box">
+                    <h4>Onboarding Best Practices:</h4>
+                    <ul>
+                        <li>Complete all profile sections for better creator trust</li>
+                        <li>Upload professional company logo and banner</li>
+                        <li>Write compelling company description highlighting your mission</li>
+                        <li>Set realistic budget expectations based on market rates</li>
+                        <li>Connect with platform support for personalized guidance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-5-2">
+                <h3>5.2 Home Section Overview</h3>
+                <p>When logged in as a company, the Home section acts as your central hiring hub.</p>
+                
+                <div class="highlight-box">
+                    <h4>Company Dashboard Elements:</h4>
+                    <ul>
+                        <li><strong>Featured Talent Pool:</strong> AI-curated creators matching your recent searches and projects</li>
+                        <li><strong>Active Gigs Overview:</strong> Quick status view of all posted projects and applications</li>
+                        <li><strong>Creator Activity Feed:</strong> Updates from creators in your network and relevant industry content</li>
+                        <li><strong>Hiring Analytics:</strong> Insights on application rates, hire success, and project completion</li>
+                        <li><strong>Quick Actions Panel:</strong> One-click access to post gigs, review applications, and search talent</li>
+                        <li><strong>Platform Announcements:</strong> Updates on new features, policy changes, and hiring tips</li>
+                        <li><strong>Recommended Creators:</strong> Personalized suggestions based on your hiring patterns</li>
+                    </ul>
+                </div>
+                
+                <div class="success-box">
+                    <h4>Dashboard Optimization:</h4>
+                    <ul>
+                        <li>Customize your feed by following creators whose work aligns with your brand</li>
+                        <li>Set up notifications for high-priority gig applications</li>
+                        <li>Use quick actions to
+                                                <li>Set up notifications for high-priority gig applications</li>
+                        <li>Use quick actions to streamline repeated tasks like posting gigs</li>
+                        <li>Review analytics weekly to assess hiring effectiveness</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-5-3">
+                <h3>5.3 Searching for Creators & Gigs</h3>
+                <div class="highlight-box">
+                    <h4>Search Features:</h4>
+                    <ul>
+                        <li><strong>Keyword Search:</strong> Find creators by skill, tool, or project type</li>
+                        <li><strong>Advanced Filters:</strong> Sort by location, experience, style, portfolio rating</li>
+                        <li><strong>Gig Finder:</strong> Browse available posts for collaboration opportunities</li>
+                        <li><strong>Saved Searches:</strong> Store queries to revisit later</li>
+                        <li><strong>Creator Tags:</strong> Click on tags in profiles to discover similar talent</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="section-5-4">
+                <h3>5.4 Creating a Gig</h3>
+                <p>Companies use gigs to outline project requirements and attract skilled freelancers.</p>
+            </div>
+
+            <div id="section-5-4-1">
+                <h4>5.4.1 Gig Title, Category & Tags</h4>
+                <p>Provide a clear, descriptive title to help freelancers quickly identify relevant opportunities.</p>
+            </div>
+
+            <div id="section-5-4-2">
+                <h4>5.4.2 Project Overview & Assets</h4>
+                <p>Include detailed briefs, relevant brand assets, and inspiration references.</p>
+            </div>
+
+            <div id="section-5-4-3">
+                <h4>5.4.3 Budget & Timeline</h4>
+                <p>Set realistic budgets and delivery deadlines that reflect project complexity.</p>
+            </div>
+
+            <div id="section-5-4-4">
+                <h4>5.4.4 Gig Preview & Posting</h4>
+                <p>Review your listing before publishing to ensure clarity and accuracy.</p>
+            </div>
+
+            <div id="section-5-5">
+                <h3>5.5 Reviewing Applications</h3>
+                <div class="highlight-box">
+                    <h4>Application Review Steps:</h4>
+                    <ol>
+                        <li>Open application list for each gig</li>
+                        <li>Preview attached portfolio samples</li>
+                        <li>Mark applicants with green or red status as you decide</li>
+                        <li>Shortlist strong candidates for interviewing</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div id="section-5-6">
+                <h3>5.6 Managing Hires & Payments</h3>
+                <p>All hire contracts and payments are handled in-platform for security.</p>
+            </div>
+
+            <div id="section-5-7">
+                <h3>5.7 Communication Best Practices with Freelancers</h3>
+                <ul>
+                    <li>Respond to messages within 24 hours</li>
+                    <li>Be clear about milestones and expected outputs</li>
+                    <li>Use polite and constructive feedback approaches</li>
+                </ul>
+            </div>
+
+            <div id="section-5-8">
+                <```
+<h3>5.8 Requesting Revisions from Creators</h3>
+<p>Revisions help refine deliverables for brand alignment.</p>
+<div class="highlight-box">
+    <h4>Steps for Requesting Revisions:</h4>
+    <ol>
+        <li>Review the deliverable and note specific changes needed</li>
+        <li>Provide clear, actionable feedback, avoiding vague statements</li>
+        <li>Set a reasonable revision deadline</li>
+        <li>Clarify if changes are within the agreed project scope</li>
+    </ol>
+</div>
+<div class="warning-box">
+    <h4>Avoid:</h4>
+    <ul>
+        <li>Requesting major scope changes without additional payment discussions</li>
+        <li>Providing unclear or contradictory instructions</li>
+        <li>Delaying feedback beyond the project timeline</li>
+    </ul>
+</div>
+</div>
+
+<div id="section-5-9">
+    <h3>5.9 Company Settings</h3>
+    <p>The settings panel allows you to update account details, payment methods, notification preferences, and manage your team.</p>
+</div>
+
+<div id="section-5-10">
+    <h3>5.10 Logging Out</h3>
+    <div class="highlight-box">
+        <h4>Steps to Log Out:</h4>
+        <ol>
+            <li>Click on your company profile icon in the top-right corner</li>
+            <li>Select “Log Out” from the dropdown menu</li>
+            <li>Confirm logout if prompted</li>
+            <li>You will be redirected to the homepage</li>
+        </ol>
+    </div>
+</div>
+</div>
+
+<div id="section-6" class="section">
+<h2>6. Payment Process</h2>
+
+<div id="section-6-1">
+    <h3>6.1 How Payments Work for Freelancers (Wallet System)</h3>
+    <p>Freelancers receive payment in an in-platform wallet once work is approved by the hiring company. Funds are then available for withdrawal.</p>
+</div>
+
+<div id="section-6-2">
+    <h3>6.2 How Payments Work for Companies (Wallet System)</h3>
+    <p>Companies fund their wallet before awarding projects. Payment is only released once work is approved.</p>
+</div>
+
+<div id="section-6-3">
+    <h3>6.3 Dispute Resolution & Support</h3>
+    <p>In case of disagreement over payment or deliverables, the dispute resolution team will mediate and make a binding decision.</p>
+</div>
+
+<div id="section-6-4">
+    <h3>6.4 Refund Policy for Brands</h3>
+    <p>Refunds are allowed if work has not commenced or deliverables fail to meet agreed specifications, subject to mediation.</p>
+</div>
+
+<div id="section-6-5">
+    <h3>6.5 No Refunds for Freelancers</h3>
+    <p>All subscription purchases for freelancers are final and non-refundable.</p>
+</div>
+</div>
+
+<div id="section-7" class="section">
+<h2>7. Frequently Asked Questions (FAQ)</h2>
+<ul>
+    <li><strong>Q:</strong> How do I improve my chances of getting work?<br><strong>A:</strong> Maintain a complete, updated portfolio and respond swiftly to messages.</li>
+    <li><strong>Q:</strong> Can I use my own contracts?<br><strong>A:</strong> All agreements must be processed through Unjob.ai for security.</li>
+    <li><strong>Q:</strong> How do I withdraw my earnings?<br><strong>A:</strong> Link a payment method in the Payments tab and request a withdrawal.</li>
+</ul>
+</div>
+
+<div id="section-8" class="section">
+<h2>8. Troubleshooting & Common Errors</h2>
+
+<div id="section-8-1">
+    <h3>8.1 Login Issues</h3>
+    <ul>
+        <li>Ensure internet connectivity</li>
+        <li>Reset your password if you forget it</li>
+        <li>Clear cache and cookies if login fails repeatedly</li>
+    </ul>
+</div>
+
+<div id="section-8-2">
+    <h3>8.2 Gig Creation Errors</h3>
+    <ul>
+        <li>Verify all required fields are filled</li>
+        <li>Ensure file uploads meet the size and format requirements</li>
+    </ul>
+</div>
+
+<div id="section-8-3">
+    <h3>8.3 Payment Issues</h3>
+    <ul>
+        <li>Check that your payment method is verified</li>
+        <li>Ensure project has been approved by the other party</li>
+        <li>Contact support if funds don’t arrive within the expected timeframe</li>
+    </ul>
+</div>
+</div>
+
+<a href="#top" class="back-to-top" id="backToTopBtn">&#8679;</a>
+
+<script>
+
+const backToTopBtn = document.getElementById('backToTopBtn');
+
+// Show/hide button on scroll
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+
+// Smooth scroll to top
+backToTopBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+</script>
+
+</script>
+</body>
+</html>
+
+                
